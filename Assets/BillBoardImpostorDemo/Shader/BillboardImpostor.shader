@@ -42,8 +42,8 @@ Shader "ImpostorDemo/BillboardImpostor"
 			uniform float _AI_Clip; // 透明背景裁剪程度
 			
 			// 漫反射强度
-			float4 _DiffuseColor;
-			float _Diffuse;
+			uniform float4 _DiffuseColor;
+			uniform float _Diffuse;
 
 			// 空间纹理映射变换
 			float2 VectortoOctahedron( float3 N )
@@ -84,6 +84,7 @@ Shader "ImpostorDemo/BillboardImpostor"
 				// 模型空间：相机的位置
 				float3 objectCameraPosition = mul( unity_WorldToObject, float4( worldCameraPos, 1 ) ).xyz;
 				float3 upVector = float3( 0,1,0 );
+				//float3 objectCameraDirection = UNITY_MATRIX_V[2].xyz;
 
 				// 模型水平竖直向量
 				float3 objectHorizontalVector = normalize( cross( objectCameraDirection, upVector ) );
@@ -123,7 +124,7 @@ Shader "ImpostorDemo/BillboardImpostor"
 				// 漫反射
 				float3 worldlight = normalize(_WorldSpaceLightPos0.xyz);
 				float3 worldnormal = normalize(mul(v.normal, (float3x3)unity_ObjectToWorld));
-				float3 diffuse = _LightColor0.rgb * 0.5 * saturate(dot(worldnormal,worldlight));
+				float3 diffuse = _LightColor0.rgb * _DiffuseColor * _Diffuse * saturate(dot(worldnormal,worldlight));
 				o.viewPos17 = float4(diffuse,0);
 				return o;
 			}

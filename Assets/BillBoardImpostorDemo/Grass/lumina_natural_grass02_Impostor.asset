@@ -84,7 +84,7 @@ Material:
     - _AI_TextureBias: -1
     - _ClipMask: 0.5
     - _DepthSize: 2.3981874
-    - _Diffuse: 1
+    - _Diffuse: 0.518
     - _Frames: 16
     - _Hemi: 0
     - _Hue: 0

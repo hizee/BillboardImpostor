@@ -113,34 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &40824631
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/FXAA
-  m_Shader: {fileID: 4800000, guid: 29ef048e869932f429fa0d563548f8bd, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ContrastThreshold: 0.0312
-    - _RelativeThreshold: 0.063
-    - _SubpixelBlending: 1
-    m_Colors: []
 --- !u!1 &55235989
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +426,7 @@ GameObject:
   - component: {fileID: 772971036}
   - component: {fileID: 772971035}
   m_Layer: 0
-  m_Name: Impostor
+  m_Name: GrassImpostor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fee77196b8cde44a9bc8f74029d6631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 40824631}
+  mat: {fileID: 0}
 --- !u!114 &1264583697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +750,7 @@ GameObject:
   - component: {fileID: 1296753767}
   - component: {fileID: 1296753766}
   m_Layer: 0
-  m_Name: Impostor
+  m_Name: GrassImpostor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,10 +1063,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1637648086}
     m_Modifications:
-    - target: {fileID: 110990, guid: 840372b642cf0714da46d91731e60c92, type: 3}
-      propertyPath: m_Name
-      value: Stone
-      objectReference: {fileID: 0}
     - target: {fileID: 410990, guid: 840372b642cf0714da46d91731e60c92, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8227307
@@ -1150,6 +1118,10 @@ PrefabInstance:
     - target: {fileID: 410990, guid: 840372b642cf0714da46d91731e60c92, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 110990, guid: 840372b642cf0714da46d91731e60c92, type: 3}
+      propertyPath: m_Name
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840372b642cf0714da46d91731e60c92, type: 3}
