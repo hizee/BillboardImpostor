@@ -121,20 +121,23 @@ Shader "ImpostorDemo/BillboardImpostor"
 				OctaImpostorVertex( v, o.UVsFrame117 ); ///
 				o.pos = UnityObjectToClipPos(v.vertex); // 顶点投影坐标
 
-				// 漫反射
-				float3 worldlight = normalize(_WorldSpaceLightPos0.xyz);
-				float3 worldnormal = normalize(mul(v.normal, (float3x3)unity_ObjectToWorld));
-				float3 diffuse = _LightColor0.rgb * _DiffuseColor * _Diffuse * saturate(dot(worldnormal,worldlight));
-				o.viewPos17 = float4(diffuse,0);
 				return o;
 			}
 
 			// 片段着色
-			fixed4 frag (v2f_surf IN) : SV_Target {				
+			fixed4 frag (v2f_surf IN) : SV_Target {	
+			    // 漫反射
+				float3 worldlight = normalize(_WorldSpaceLightPos0.xyz);
+				float4 imNormal = tex2D( _Normals, float3( IN.UVsFrame117.xy, 0) );
+				float3 worldnormal = normalize(mul(imNormal.rgb, (float3x3)unity_ObjectToWorld));
+				float3 diffuse = _LightColor0.rgb * _DiffuseColor * _Diffuse * saturate(dot(worldnormal,worldlight));
+
+				// Diffuse
 				float4 blendedAlbedo = tex2D( _Albedo, float3( IN.UVsFrame117.xy, 0) );
 				float alpha = blendedAlbedo.a - _AI_Clip;
 				clip(alpha);
-				return (blendedAlbedo + IN.viewPos17);
+
+				return (blendedAlbedo + float4(diffuse,0));
 			}
 			ENDCG
 		}
