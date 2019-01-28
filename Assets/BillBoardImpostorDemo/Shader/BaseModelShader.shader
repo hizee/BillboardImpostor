@@ -50,7 +50,7 @@ Shader "ImpostorDemo/BaseModelShader"
 				// 漫反射
 				float3 worldlight = normalize(_WorldSpaceLightPos0.xyz);
 				float3 worldnormal = normalize(mul(v.normal, (float3x3)unity_ObjectToWorld));
-				float3 diffuse = _LightColor0.rgb * _DiffuseColor * _Diffuse * saturate(dot(worldnormal,worldlight));
+				float3 diffuse = _LightColor0.rgb * saturate(dot(worldnormal,worldlight));
 				o.diffuseColor = float4(diffuse,0);
                 return o;
             }
@@ -59,7 +59,7 @@ Shader "ImpostorDemo/BaseModelShader"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
 				clip(col.w - 0.5f);             
-                return col + i.diffuseColor;
+                return col * i.diffuseColor;
             }
             ENDCG
         }

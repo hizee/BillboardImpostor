@@ -130,15 +130,16 @@ Shader "ImpostorDemo/BillboardImpostor"
 				float3 worldlight = normalize(_WorldSpaceLightPos0.xyz);
 				float4 imNormal = tex2D( _Normals, float3( IN.UVsFrame117.xy, 0) );
 				float3 worldnormal = normalize(mul(imNormal.rgb, (float3x3)unity_ObjectToWorld));
-				float3 diffuse = _LightColor0.rgb * _DiffuseColor * _Diffuse * saturate(dot(worldnormal,worldlight));
+				float3 diffuse = _LightColor0.rgb * saturate(dot(worldnormal,worldlight));
 
 				// Diffuse
 				float4 blendedAlbedo = tex2D( _Albedo, float3( IN.UVsFrame117.xy, 0) );
 				float alpha = blendedAlbedo.a - _AI_Clip;
 				clip(alpha);
 
-				return (blendedAlbedo + float4(diffuse,0));
+				return (blendedAlbedo * float4(diffuse,0));
 			}
+
 			ENDCG
 		}
 		
