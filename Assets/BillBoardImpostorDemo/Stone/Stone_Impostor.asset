@@ -31,7 +31,7 @@ MonoBehaviour:
   - {x: 0.9641023, y: 1}
   - {x: 0.9641023, y: 0.031991422}
   - {x: 0.035897683, y: 0.031991422}
-  Preset: {fileID: 11400000, guid: e4786beb7716da54dbb02a632681cc37, type: 2}
+  Preset: {fileID: 11400000, guid: 13c7fc685872856409c5954889a4faac, type: 2}
   OverrideOutput: []
 --- !u!21 &21347239784365396
 Material:
@@ -84,7 +84,7 @@ Material:
     - _AI_TextureBias: -1
     - _ClipMask: 0.5
     - _DepthSize: 123.74248
-    - _Diffuse: 0.246
+    - _Diffuse: 1
     - _Frames: 16
     - _Hemi: 0
     - _Hue: 0

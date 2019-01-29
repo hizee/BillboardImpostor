@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,7 +13,7 @@ MonoBehaviour:
   m_Name: CustomBakingPreset
   m_EditorClassIdentifier: 
   BakeShader: {fileID: 4800000, guid: 0468a79043ccbd34bba5631062ece8e2, type: 3}
-  RuntimeShader: {fileID: 4800000, guid: 8c0c55170fae60047b93e60e2999e382, type: 3}
+  RuntimeShader: {fileID: 4800000, guid: 46127b214a0322445867ce1a2e5c55a3, type: 3}
   AlphaIndex: 0
   Output:
   - Index: -1

@@ -137,7 +137,9 @@ Shader "ImpostorDemo/BillboardImpostor"
 				float alpha = blendedAlbedo.a - _AI_Clip;
 				clip(alpha);
 
-				return (blendedAlbedo * float4(diffuse,0));
+				float4 ambientColor = 1.0;
+
+				return blendedAlbedo * (float4(diffuse,0) + ambientColor * 0.5);
 			}
 
 			ENDCG

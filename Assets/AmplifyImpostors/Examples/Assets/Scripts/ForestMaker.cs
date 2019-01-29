@@ -27,8 +27,8 @@ public class ForestMaker : MonoBehaviour
 				newPos.x = ( i + j * 0.5f - (int)((j < 0?j-1f:j) / 2.0f) ) * 2 * m_radiusDistance;
 				newPos.z = ( j ) * 1.866f * m_radiusDistance;
 				newGo.transform.position = newPos;
-				float size = Random.Range( 1f, 1.5f );
-				newGo.transform.localScale = Vector3.one * size;
+				//float size = Random.Range( 1f, 1.5f );
+				newGo.transform.localScale = Vector3.one;
 				//newGo.transform.Rotate( Random.Range( -10f, 10f ), Random.Range( -180f, 180f ), Random.Range( -10f, 10f ) );
 			}
 		}

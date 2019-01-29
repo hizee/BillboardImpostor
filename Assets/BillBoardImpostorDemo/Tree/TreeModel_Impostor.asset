@@ -74,7 +74,7 @@ Material:
     - _AI_Parallax: 1
     - _AI_ShadowBias: 0.25
     - _AI_TextureBias: -1
-    - _Diffuse: 0.651
+    - _Diffuse: 1
     m_Colors:
     - _AI_Offset: {r: 0.22232056, g: 8.998086, b: -0.14837313, a: 0}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}

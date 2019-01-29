@@ -58,8 +58,9 @@ Shader "ImpostorDemo/BaseModelShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-				clip(col.w - 0.5f);             
-                return col * i.diffuseColor;
+				clip(col.w - 0.5f);   
+				float4 ambientColor = 1.0;
+                return col * (i.diffuseColor + ambientColor * 0.5);
             }
             ENDCG
         }
